@@ -1,0 +1,20 @@
+<input type="text" ng-model="search" class="search-query" placeholder="Search">
+<table class="table">
+  <thead>
+  <tr>
+    <th>Nombre</th>
+    <th>Path</th>
+    <th><a href="#/new"><i class="fa fa-plus-square-o"></i></a></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="node in nodes | filter:search | orderBy:orderProp">
+    <td>{{node.name}}</td>
+    <td>{{node.path}}</td>
+    <td>
+      <a href="#/new/{{node.id}}"><i class="fa fa-plus-square-o"></i></a>
+      <a href="#/edit/{{node.id}}"><i class="fa fa-pencil-square-o"></i></a>
+    </td>
+  </tr>
+  </tbody>
+</table>

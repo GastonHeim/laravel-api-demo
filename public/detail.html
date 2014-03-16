@@ -1,0 +1,20 @@
+<form name="myForm">
+  <div class="control-group" ng-class="{error: myForm.name.$invalid && !myForm.name.$pristine}">
+    <label>Name</label>
+    <input type="text" name="name" ng-model="node.name" required>
+    <span ng-show="myForm.name.$error.required && !myForm.name.$pristine" class="help-inline">
+        Required {{myForm.name.$pristine}}</span>
+  </div>
+
+  <label>Notes</label>
+  <textarea name="notes" ng-model="node.notes"></textarea>
+
+  <input type="hidden" name="parent" ng-model="node.parent" ng-init="node.parent=parentId">
+
+  <br>
+  <a href="#/" class="btn">Cancel</a>
+  <button ng-click="save()" ng-disabled="myForm.$invalid"
+          class="btn btn-primary">Save</button>
+  <button ng-click="destroy()"
+          ng-show="node.id" class="btn btn-danger">Delete</button>
+</form>
