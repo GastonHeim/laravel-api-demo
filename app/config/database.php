@@ -55,7 +55,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'diariodecampo',
+			'database'  => 'laravel_api',
 			'username'  => 'root',
 			'password'  => 'root',
 			'charset'   => 'utf8',
